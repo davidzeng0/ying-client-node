@@ -1,0 +1,10 @@
+{
+	"name": "xxlink-client-js",
+	"dependencies": {
+
+	},
+	"scripts": {
+		"proto": "mkdir -p build && protoc --proto_path=xxlink-proto --js_out=import_style=commonjs,binary:build xxlink-proto/*.proto xxlink-proto/commands/*.proto",
+		"install": "npm run proto"
+	}
+}
