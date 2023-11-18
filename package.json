@@ -1,10 +1,26 @@
 {
-	"name": "xxlink-client-js",
+	"name": "ying-client-node",
+	"version": "0.1.0",
+	"main": "dist/index.js",
+	"types": "dist/index.js",
 	"dependencies": {
-
+		"@types/node": "^20.8.10",
+		"ws": "^8.14.2"
 	},
+	"devDependencies": {
+		"git-publish": "^2.0.0",
+		"ts-proto": "^1.163.0",
+		"tsup": "^7.2.0",
+		"typescript": "^5.2.2"
+	},
+	"files": [
+		"dist"
+	],
 	"scripts": {
-		"proto": "mkdir -p build && protoc --proto_path=xxlink-proto --js_out=import_style=commonjs,binary:build xxlink-proto/*.proto xxlink-proto/commands/*.proto",
-		"install": "npm run proto"
+		"build": "tsup-node --entry.index src/index.ts --minify --keep-names --target esnext --dts --treeshake",
+		"full": "yarn proto && yarn build",
+		"prepare": "yarn full",
+		"git-publish": "git-publish -b dist",
+		"proto": "./proto.sh"
 	}
 }

@@ -1,0 +1,28 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "commonjs",
+		"outDir": "dist",
+		"strict": true,
+		"allowUnreachableCode": false,
+		"noImplicitAny": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"strictFunctionTypes": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"esModuleInterop": true,
+		"types": ["node"],
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+		},
+		"rootDir": "."
+	},
+
+	"include": [
+		"src"
+	]
+}
